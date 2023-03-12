@@ -180,4 +180,6 @@ while True:
      time.sleep(0.01)
 
 print(Style.RESET_ALL +"----------------------------------------")
-#exit("---\nkonec programu\n---")
+
+
+# dej barvy do metod aby jsi je mohl vložit mezi text v printu !!! !!! !!!
