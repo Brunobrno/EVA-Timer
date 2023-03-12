@@ -115,9 +115,15 @@ while True:
     milliseconds = int(milliseconds / 10)
 
     if minutes==None:
-     minutes = 0
+     minutes = "0"
+    
     if seconds==None:
-     seconds = 0
+     seconds = "00"
+    elif seconds <10:
+     seconds = "0" + str(seconds)
+    
+    if milliseconds == 0:
+     milliseconds = "00"
 
     my_string = "{}{}{}{}{}".format(minutes,"D",seconds,"D",milliseconds)
     # Display the timer in the format "minutes : seconds : milliseconds"

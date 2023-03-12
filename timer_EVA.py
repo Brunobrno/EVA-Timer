@@ -98,7 +98,7 @@ print(Fore.RED + Back.BLACK)
 """
 
 # Define the duration of the timer in seconds
-duration = 3 #5minut
+duration = 65 #5minut
 
 # Start the timer
 start_time = time.time()
@@ -125,13 +125,13 @@ while True:
     elif seconds <10:
      seconds = "0" + str(seconds)
     
-    if milliseconds == None:
+    if milliseconds == 0:
      milliseconds = "00"
 
-    my_string = "{}{}{}{}{}".format(minutes,"D",seconds,"D",milliseconds)
+    final = "{}{}{}{}{}".format(minutes,"D",seconds,"D",milliseconds)
     # Display the timer in the format "minutes : seconds : milliseconds"
 
-    tiskHori(my_string)
+    tiskHori(final)
     print(milliseconds)
     # If the timer is done, break out of the loop
     if remaining_time == 0:
