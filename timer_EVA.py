@@ -29,15 +29,15 @@ def tiskHori(number):
     #tisk horizontalne
     for z in range(3):
         for segItem in forSegment:
-               if segItem == 'D':
+               """if segItem == 'D':
                     print(D[z], end="")
                elif segItem == 'E':
                     print(E[z], end="")
                elif segItem == 'L':
                     print(L[z], end="")
                elif segItem == 'Z':
-                    print(Z[z], end="")
-               elif segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
+                    print(Z[z], end="")"""
+               if segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
                     print(globals()['n' + str(segItem)][z], end=" ")#n(cislo z segItemu)[z]  tisk,
         print("")
 
@@ -84,21 +84,21 @@ n9 =['█▀█',
      '▀▀█',
      '▄▄█'] 
      
-D  =['   ',
+nD  =['   ',
      ' ▀ ',
      ' ▀ '] 
 
-E = ['║内部 internal  ▒▒▒▒▒▒      ║',
+nE = ['║内部 internal  ▒▒▒▒▒▒      ║',
      '╠═══════════════════════════╣',
      '║主なエネルギー供給システム ║',]
 
-L = ['║',
-     '║',
-     '║']
+nL = ['║',
+      '║',
+      '║']
 
-Z = ['     ',
-     '     ',
-     '     ']
+nZ = ['    ',
+     '    ',
+     '    ']
 #-----------------------------------------------
 
 blik = False
@@ -143,14 +143,14 @@ while True:
 
     final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
     # Display the timer in the format "minutes : seconds : milliseconds"
-    print("╔════════════════════════════════════╗")
-    print("║活動限界まで  active time remaining ║")
-    print("╠══════════════════════════╦═════════╩═════════════════╗")
+    print("╔═══════════════════════════════════════╗")
+    print("║活動限界まで  active time remaining    ║")
+    print("╠═════════════════════════════╦═════════╩═════════════════╗")
     tiskHori(final)
-    print("╠══════════════════════════╣main energy supply system  ║")
-    print("║                          ╠═══════════════════════════╣")
-    print("║                          ║外部 external  ▒▒▒▒▒▒      ║")
-    print("╚══════════════════════════╩═══════════════════════════╝")
+    print("╠═════════════════════════════╣main energy supply system  ║")
+    print("║                             ╠═══════════════════════════╣")
+    print("║                             ║外部 external  ▒▒▒▒▒▒      ║")
+    print("╚═════════════════════════════╩═══════════════════════════╝")
     # If the timer is done, break out of the loop
     if remaining_time == 0:
         break
@@ -169,14 +169,14 @@ while True:
           blik = True
      
      clear_console()
-     print("╔════════════════════════════════════╗")
-     print("║活動限界まで  active time remaining ║")
-     print("╠══════════════════════════╦═════════╩═════════════════╗")
+     print("╔═══════════════════════════════════════╗")
+     print("║活動限界まで  active time remaining    ║")
+     print("╠═════════════════════════════╦═════════╩═════════════════╗")
      tiskHori(final)
-     print("╠══════════════════════════╣main energy supply system  ║")
-     print("║                          ╠═══════════════════════════╣")
-     print("║                          ║外部 external  ▒▒▒▒▒▒      ║")
-     print("╚══════════════════════════╩═══════════════════════════╝")
+     print("╠═════════════════════════════╣main energy supply system  ║")
+     print("║                             ╠═══════════════════════════╣")
+     print("║                             ║外部 external  ▒▒▒▒▒▒      ║")
+     print("╚═════════════════════════════╩═══════════════════════════╝")
      time.sleep(0.01)
 
 print(Style.RESET_ALL +"----------------------------------------")
