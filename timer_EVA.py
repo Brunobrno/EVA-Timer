@@ -35,7 +35,9 @@ def tiskHori(number):
                     print(E[z], end="")
                elif segItem == 'L':
                     print(L[z], end="")
-               elif segItem != 'D' or segItem != 'E' or segItem!= 'L':
+               elif segItem == 'Z':
+                    print(Z[z], end="")
+               elif segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
                     print(globals()['n' + str(segItem)][z], end=" ")#n(cislo z segItemu)[z]  tisk,
         print("")
 
@@ -94,17 +96,20 @@ L = ['║',
      '║',
      '║']
 
-"""Z = ['まで',
-     '    ',
-     '    ']"""
+Z = ['     ',
+     '     ',
+     '     ']
 #-----------------------------------------------
+
+blik = False
+
 
 # Set text color to green and background color to yellow
 print(Fore.YELLOW + Back.BLACK)
 
 
 # Define the duration of the timer in seconds
-duration = 300 #5minut
+duration = 2 #5minut
 
 # Start the timer
 start_time = time.time()
@@ -154,6 +159,25 @@ while True:
     time.sleep(0.01)
     clear_console()
 
+while True:
+     time.sleep(0.5)
+     if blik == True:
+          final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
+          blik = False
+     elif blik == False:
+          final = "{}{}{}{}{}{}{}".format('L',"Z","D","Z","D","ZZ","E")
+          blik = True
+     
+     clear_console()
+     print("╔════════════════════════════════════╗")
+     print("║活動限界まで  active time remaining ║")
+     print("╠══════════════════════════╦═════════╩═════════════════╗")
+     tiskHori(final)
+     print("╠══════════════════════════╣main energy supply system  ║")
+     print("║                          ╠═══════════════════════════╣")
+     print("║                          ║外部 external  ▒▒▒▒▒▒      ║")
+     print("╚══════════════════════════╩═══════════════════════════╝")
+     time.sleep(0.01)
 
 print(Style.RESET_ALL +"----------------------------------------")
 #exit("---\nkonec programu\n---")
