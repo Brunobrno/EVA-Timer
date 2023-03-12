@@ -5,6 +5,8 @@ from colorama import init, Fore, Back, Style
 # Initialize colorama
 init()
 
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 #------------FUNKCE-----------------
 def tiskPod (number , string ,forSegment):
@@ -15,23 +17,28 @@ def tiskPod (number , string ,forSegment):
   #int forSegment itemy se čtou aby vytisknuly čísla na konzoli
   for y in forSegment:
     for x in globals()['n' + str(y)]:
-        print(x)
+          print(x)
 
 def tiskHori(number):
 
-    number = int(number)
-    string = str(number)
     forSegment = []
 
     #rozdeleni inputu na pole aby se vytisknulo jednotlive cislo
-    for items in string:
-        forSegment.append(int(items)) #1,2,3,4...
+    for items in number:
+          forSegment.append(items) #1,2,3,4...
 
     #tisk horizontalne
     for z in range(3):
         for segItem in forSegment:
-            print(globals()['n' + str(segItem)][z], end=" ")#n(cislo z segItemu)[z]  tisk
+               if segItem == 'D':
+                    print(D[z], end="")
+               elif segItem != 'D' :
+                    print(globals()['n' + str(segItem)][z], end=" ")#n(cislo z segItemu)[z]  tisk,
+            #print(len(forSegment), end="")
         print("")
+
+
+
 #-----------konec funkci------------------
 n0 =['█▀█',
      '█ █',
@@ -73,9 +80,9 @@ n9 =['█▀█',
      '▀▀█',
      '▄▄█'] 
      
-DT =['   ',
-     ' ▀ ',
-     ' ▀ '] 
+D   =['   ',
+      ' ▀ ',
+      ' ▀ '] 
 #-----------------------------------------------
 
 # Set text color to green and background color to yellow
@@ -107,7 +114,12 @@ while True:
     milliseconds = int((elapsed_time % 1) * 1000)
     milliseconds = int(milliseconds / 10)
 
-    my_string = "{}{}{}".format(minutes, seconds, milliseconds)
+    if minutes==None:
+     minutes = 0
+    if seconds==None:
+     seconds = 0
+
+    my_string = "{}{}{}{}{}".format(minutes,"D",seconds,"D",milliseconds)
     # Display the timer in the format "minutes : seconds : milliseconds"
     tiskHori(my_string)
 
@@ -117,6 +129,7 @@ while True:
 
     # Wait for a short period to avoid using too much CPU time
     time.sleep(0.01)
+    clear_console()
 
 
 print(Style.RESET_ALL +"----------------------------------------")
