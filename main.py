@@ -90,13 +90,6 @@ print(Fore.RED + Back.BLACK)
 
 
 
-"""for x in range(15,0,-1):
-  tiskHori(x)
-  time.sleep(1)
-  # Clear console screen
-  os.system('cls' if os.name == 'nt' else 'clear')
-"""
-
 # Define the duration of the timer in seconds
 duration = 300 #5minut
 

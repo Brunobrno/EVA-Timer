@@ -86,9 +86,9 @@ D  =['   ',
      ' ▀ ',
      ' ▀ '] 
 
-E = ['║内部 internal  ▒▒▒▒▒▒       ',
-     '╠══════════════════════════  ',
-     '║主なエネルギー供給システム    ',]
+E = ['║内部 internal  ▒▒▒▒▒▒      ║',
+     '╠═══════════════════════════╣',
+     '║主なエネルギー供給システム ║',]
 
 L = ['║',
      '║',
@@ -138,11 +138,14 @@ while True:
 
     final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
     # Display the timer in the format "minutes : seconds : milliseconds"
-    print("║活動限界まで  active time remaining")
-    print("╠══════════════════════════╦═══════════════════════════╗")
+    print("╔════════════════════════════════════╗")
+    print("║活動限界まで  active time remaining ║")
+    print("╠══════════════════════════╦═════════╩═════════════════╗")
     tiskHori(final)
-    print("╠══════════════════════════╣main energy supply system")
-    print("   外部 external")
+    print("╠══════════════════════════╣main energy supply system  ║")
+    print("║                          ╠═══════════════════════════╣")
+    print("║                          ║外部 external  ▒▒▒▒▒▒      ║")
+    print("╚══════════════════════════╩═══════════════════════════╝")
     # If the timer is done, break out of the loop
     if remaining_time == 0:
         break
