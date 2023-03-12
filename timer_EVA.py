@@ -25,16 +25,18 @@ def tiskHori(number):
 
     #rozdeleni inputu na pole aby se vytisknulo jednotlive cislo
     for items in number:
-          forSegment.append(items) #1,2,3,4...
-
+          forSegment.append(items) #1,2,3,4...vBbbBfbvcBVcbvbcv
     #tisk horizontalne
     for z in range(3):
         for segItem in forSegment:
                if segItem == 'D':
                     print(D[z], end="")
-               elif segItem != 'D' :
+               elif segItem == 'E':
+                    print(E[z], end="")
+               elif segItem == 'L':
+                    print(L[z], end="")
+               elif segItem != 'D' or segItem != 'E' or segItem!= 'L':
                     print(globals()['n' + str(segItem)][z], end=" ")#n(cislo z segItemu)[z]  tisk,
-            #print(len(forSegment), end="")
         print("")
 
 
@@ -80,22 +82,26 @@ n9 =['█▀█',
      '▀▀█',
      '▄▄█'] 
      
-D   =['   ',
-      ' ▀ ',
-      ' ▀ '] 
+D  =['   ',
+     ' ▀ ',
+     ' ▀ '] 
+
+E = ['║内部 internal  ▒▒▒▒▒▒       ',
+     '╠══════════════════════════  ',
+     '║主なエネルギー供給システム    ',]
+
+L = ['║',
+     '║',
+     '║']
+
+"""Z = ['まで',
+     '    ',
+     '    ']"""
 #-----------------------------------------------
 
 # Set text color to green and background color to yellow
-print(Fore.RED + Back.BLACK)
+print(Fore.YELLOW + Back.BLACK)
 
-
-
-"""for x in range(15,0,-1):
-  tiskHori(x)
-  time.sleep(1)
-  # Clear console screen
-  os.system('cls' if os.name == 'nt' else 'clear')
-"""
 
 # Define the duration of the timer in seconds
 duration = 300 #5minut
@@ -127,11 +133,16 @@ while True:
     
     if milliseconds == 0:
      milliseconds = "00"
+    elif milliseconds <10:
+     milliseconds = "0" + str(milliseconds)
 
-    final = "{}{}{}{}{}".format(minutes,"D",seconds,"D",milliseconds)
+    final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
     # Display the timer in the format "minutes : seconds : milliseconds"
-
+    print("║活動限界まで  active time remaining")
+    print("╠══════════════════════════╦═══════════════════════════╗")
     tiskHori(final)
+    print("╠══════════════════════════╣main energy supply system")
+    print("   外部 external")
     # If the timer is done, break out of the loop
     if remaining_time == 0:
         break
