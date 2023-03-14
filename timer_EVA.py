@@ -29,16 +29,19 @@ def tiskHori(number):
     #tisk horizontalne
     for z in range(3):
         for segItem in forSegment:
-               """if segItem == 'D':
+               if segItem == 'D':
                     print(D[z], end="")
                elif segItem == 'E':
                     print(E[z], end="")
                elif segItem == 'L':
                     print(L[z], end="")
                elif segItem == 'Z':
-                    print(Z[z], end="")"""
-               if segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
-                    print(globals()['n' + str(segItem)][z], end=" ")#n(cislo z segItemu)[z]  tisk,
+                    print(Z[z], end="")
+               elif segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
+                    if red == True:
+                         print((globals()['n' + str(segItem)][z]), end=" ")#n(cislo z segItemu)[z]  tisk,
+                         print()
+                    
         print("")
 
 
@@ -84,19 +87,19 @@ n9 =['█▀█',
      '▀▀█',
      '▄▄█'] 
      
-nD  =['   ',
-     ' ▀ ',
-     ' ▀ '] 
+D  =['    ',
+     ' ▀  ',
+     ' ▀  '] 
 
-nE = ['║内部 internal  ▒▒▒▒▒▒      ║',
+E = ['║内部 internal  ▒▒▒▒▒▒      ║',
      '╠═══════════════════════════╣',
      '║主なエネルギー供給システム ║',]
 
-nL = ['║',
-      '║',
-      '║']
+L = ['║ ',
+      '║ ',
+      '║ ']
 
-nZ = ['    ',
+Z = ['    ',
      '    ',
      '    ']
 #-----------------------------------------------
@@ -160,12 +163,12 @@ while True:
     clear_console()
 
 while True:
-     time.sleep(0.5)
+     time.sleep(0.3)
      if blik == True:
           final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
           blik = False
      elif blik == False:
-          final = "{}{}{}{}{}{}{}".format('L',"Z","D","Z","D","ZZ","E")
+          final = "{}{}{}{}{}{}{}".format('L',"Z","D","ZZ","D","ZZ","E")
           blik = True
      
      clear_console()
