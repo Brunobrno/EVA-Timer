@@ -37,7 +37,7 @@ def tiskHori(number,red,internal):
                     if internal == True and z == 0:
                          for x in E[z]:
                               for y in x:
-                                   if y == '▒':
+                                   if y == '█':
                                         red_txt()
                                         print(y,end="")
                                         reset_txt()
@@ -52,7 +52,7 @@ def tiskHori(number,red,internal):
                elif segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
                     if red == True:
                          red_txt()
-                    print(() + (globals()['n' + str(segItem)][z]), end=" ")#n(cislo z segItemu)[z]  tisk,
+                    print((globals()['n' + str(segItem)][z]), end=" ")#n(cislo z segItemu)[z]  tisk,
                     reset_txt()
 
         print("")
@@ -104,7 +104,7 @@ D  =['    ',
      ' ▀  ',
      ' ▀  '] 
 
-E = ['║内部 internal  ▒▒▒▒▒▒      ║',
+E = ['║ 内部 internal  ██████     ║',
      '╠═══════════════════════════╣',
      '║ 主なエネルギー供給システム║',]
 
@@ -170,8 +170,8 @@ while True:
     print("╠═════════════════════════════╦═════════╩═════════════════╗")
     tiskHori(final,red,internal)
     print("╠═════════════════════════════╣ main energy supply system ║")
-    print("║                             ╠═══════════════════════════╣")
-    print("║                             ║外部 external  ▒▒▒▒▒▒      ║")
+    print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
+    print("║ ████   ████   ████    ████  ║ 外部 external  ██████     ║")
     print("╚═════════════════════════════╩═══════════════════════════╝")
     # If the timer is done, break out of the loop
     if remaining_time == 0:
@@ -200,8 +200,8 @@ while True:
      print("╠═════════════════════════════╦═════════╩═════════════════╗")
      tiskHori(final,red,internal)
      print("╠═════════════════════════════╣ main energy supply system ║")
-     print("║                             ╠═══════════════════════════╣")
-     print("║                             ║外部 external  ▒▒▒▒▒▒      ║")
+     print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
+     print("║ ████   ████   ████    ████  ║外部 external  ██████      ║")
      print("╚═════════════════════════════╩═══════════════════════════╝")
      time.sleep(0.01)
 
