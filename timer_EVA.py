@@ -1,25 +1,27 @@
 import time, os
 
 from colorama import init, Fore, Back, Style
-
 # Initialize colorama
 init()
+
+
+#-----------BARVY FUNKCE----------------------
+def yellow_txt():
+    print(Fore.YELLOW, end='')
+
+def red_txt():
+    print(Fore.RED, end='')
+
+def reset_txt():
+    print(Fore.RESET, end='')
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
 #------------FUNKCE-----------------
-def tiskPod (number , string ,forSegment):
-  #int (number) na string aby fungoval cyklus a přiřadí se string na int pole (forSegment)
-  for items in string:
-    forSegment.append(int(items))
 
-  #int forSegment itemy se čtou aby vytisknuly čísla na konzoli
-  for y in forSegment:
-    for x in globals()['n' + str(y)]:
-          print(x)
-
-def tiskHori(number):
+def tiskHori(number,red,internal):
 
     forSegment = []
 
@@ -32,21 +34,32 @@ def tiskHori(number):
                if segItem == 'D':
                     print(D[z], end="")
                elif segItem == 'E':
-                    print(E[z], end="")
+                    if internal == True and z == 0:
+                         for x in E[z]:
+                              for y in x:
+                                   if y == '▒':
+                                        red_txt()
+                                        print(y,end="")
+                                        reset_txt()
+                                   else:
+                                        print(y,end="")
+                    else:
+                         print(E[z], end="")
                elif segItem == 'L':
                     print(L[z], end="")
                elif segItem == 'Z':
                     print(Z[z], end="")
                elif segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
                     if red == True:
-                         print((globals()['n' + str(segItem)][z]), end=" ")#n(cislo z segItemu)[z]  tisk,
-                         print()
-                    
+                         red_txt()
+                    print(() + (globals()['n' + str(segItem)][z]), end=" ")#n(cislo z segItemu)[z]  tisk,
+                    reset_txt()
+
         print("")
 
 
 
-#-----------konec funkci------------------
+#-----------PAMĚŤ ČÍSEL A UI------------------
 n0 =['█▀█',
      '█ █',
      '█▄█' ]
@@ -93,7 +106,7 @@ D  =['    ',
 
 E = ['║内部 internal  ▒▒▒▒▒▒      ║',
      '╠═══════════════════════════╣',
-     '║主なエネルギー供給システム ║',]
+     '║ 主なエネルギー供給システム║',]
 
 L = ['║ ',
       '║ ',
@@ -105,17 +118,22 @@ Z = ['    ',
 #-----------------------------------------------
 
 blik = False
-
+red = False
 
 # Set text color to green and background color to yellow
 print(Fore.YELLOW + Back.BLACK)
 
 
 # Define the duration of the timer in seconds
-duration = 2 #5minut
+duration = 70 #5minut
+
+
 
 # Start the timer
 start_time = time.time()
+internal = True
+external = False
+
 
 # Loop until the timer is done
 while True:
@@ -131,8 +149,9 @@ while True:
     milliseconds = int((remaining_time % 1) * 1000)
     milliseconds = int(milliseconds / 10)
 
-    if minutes==None:
+    if minutes==None or minutes <1:
      minutes = "0"
+     red = True
     
     if seconds==None:
      seconds = "00"
@@ -147,10 +166,10 @@ while True:
     final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
     # Display the timer in the format "minutes : seconds : milliseconds"
     print("╔═══════════════════════════════════════╗")
-    print("║活動限界まで  active time remaining    ║")
+    print("║ 活動限界まで  active time remaining   ║")
     print("╠═════════════════════════════╦═════════╩═════════════════╗")
-    tiskHori(final)
-    print("╠═════════════════════════════╣main energy supply system  ║")
+    tiskHori(final,red,internal)
+    print("╠═════════════════════════════╣ main energy supply system ║")
     print("║                             ╠═══════════════════════════╣")
     print("║                             ║外部 external  ▒▒▒▒▒▒      ║")
     print("╚═════════════════════════════╩═══════════════════════════╝")
@@ -167,20 +186,25 @@ while True:
      if blik == True:
           final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
           blik = False
+          ATR = '活動限界まで  active time remaining'
+          internal = True
      elif blik == False:
           final = "{}{}{}{}{}{}{}".format('L',"Z","D","ZZ","D","ZZ","E")
           blik = True
+          ATR = "                                   "
+          internal = False
      
      clear_console()
      print("╔═══════════════════════════════════════╗")
-     print("║活動限界まで  active time remaining    ║")
+     print("║ "+ ATR + "   ║")
      print("╠═════════════════════════════╦═════════╩═════════════════╗")
-     tiskHori(final)
-     print("╠═════════════════════════════╣main energy supply system  ║")
+     tiskHori(final,red,internal)
+     print("╠═════════════════════════════╣ main energy supply system ║")
      print("║                             ╠═══════════════════════════╣")
      print("║                             ║外部 external  ▒▒▒▒▒▒      ║")
      print("╚═════════════════════════════╩═══════════════════════════╝")
      time.sleep(0.01)
+
 
 print(Style.RESET_ALL +"----------------------------------------")
 
