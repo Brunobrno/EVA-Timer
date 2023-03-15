@@ -12,13 +12,16 @@ def yellow_txt():
 def red_txt():
     return Fore.RED
 
+def red_bck():
+     return Back.RED
+
 def reset_txt():
-    return Fore.RESET
+    return Fore.RESET + Back.RESET
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
+# █▒█▒█▒█
 #------------FUNKCE-----------------
 
 def tiskHori(number,red,internal):
@@ -37,7 +40,7 @@ def tiskHori(number,red,internal):
                     if internal == True and z == 0:
                          for x in E[z]:
                               for y in x:
-                                   if y == '█':
+                                   if y == '█' or y == '▒':
                                         print(red_txt() + y + reset_txt(),end="")
                                    else:
                                         print(y,end="")
@@ -138,7 +141,7 @@ timerState = [False,False,False,False,False,True]
 # Start the timer
 start_time = time.time()
 timerState[0:3] = [False] * 3
-timerState[3:6] = [True, True, False]
+timerState[3:6] = [True, False, False]
 
 # Loop until the timer is done
 while True:
