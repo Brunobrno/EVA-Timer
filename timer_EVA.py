@@ -114,21 +114,25 @@ Z = ['    ',
      '    ']
 #-----------------------------------------------
 
+
+
+#------------PROMĚNNÝ--------------------------
+
 blik = False
 red = False
 
-# Set text color to green and background color to yellow
-print(Fore.YELLOW + Back.BLACK)
-
-#------------PROMĚNNÝ--------------------------
 # Define the duration of the timer in seconds
-duration = 65 #čas
+duration = int(input("Enter time(between 1 - 300):")) #čas
+if duration > 300 or duration <= 0:
+     print("please enter value between 1 to 300 seconds !")
+     duration = int(input("Enter time(between 1 - 300):")) #čas
+
 
 #             stop slow  normal racing || internal external
 timerState = [False,False,False,False,False,True]
 
 
-fullIndicator = "████"
+
 
 #----------------------------------------------
 # Start the timer
