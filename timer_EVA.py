@@ -7,13 +7,13 @@ init()
 
 #-----------BARVY FUNKCE----------------------
 def yellow_txt():
-    print(Fore.YELLOW, end='')
+    return Fore.YELLOW
 
 def red_txt():
-    print(Fore.RED, end='')
+    return Fore.RED
 
 def reset_txt():
-    print(Fore.RESET, end='')
+    return Fore.RESET
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -38,9 +38,7 @@ def tiskHori(number,red,internal):
                          for x in E[z]:
                               for y in x:
                                    if y == '█':
-                                        red_txt()
-                                        print(y,end="")
-                                        reset_txt()
+                                        print(red_txt() + y + reset_txt(),end="")
                                    else:
                                         print(y,end="")
                     else:
@@ -51,9 +49,8 @@ def tiskHori(number,red,internal):
                     print(Z[z], end="")
                elif segItem != 'D' or segItem != 'E' or segItem!= 'L' or segItem!='Z':
                     if red == True:
-                         red_txt()
-                    print((globals()['n' + str(segItem)][z]), end=" ")#n(cislo z segItemu)[z]  tisk,
-                    reset_txt()
+                         print(red_txt(),end="")
+                    print((globals()['n' + str(segItem)][z]) + reset_txt(), end=" ")#n(cislo z segItemu)[z]  tisk,
 
         print("")
 
@@ -123,17 +120,21 @@ red = False
 # Set text color to green and background color to yellow
 print(Fore.YELLOW + Back.BLACK)
 
-
+#------------PROMĚNNÝ--------------------------
 # Define the duration of the timer in seconds
-duration = 70 #5minut
+duration = 65 #čas
+
+#             stop slow  normal racing || internal external
+timerState = [False,False,False,False,False,True]
 
 
+fullIndicator = "████"
 
+#----------------------------------------------
 # Start the timer
 start_time = time.time()
-internal = True
-external = False
-
+timerState[0:3] = [False] * 3
+timerState[3:6] = [True, True, False]
 
 # Loop until the timer is done
 while True:
@@ -165,13 +166,15 @@ while True:
 
     final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
     # Display the timer in the format "minutes : seconds : milliseconds"
+
+    #------------print section-------------------
     print("╔═══════════════════════════════════════╗")
     print("║ 活動限界まで  active time remaining   ║")
     print("╠═════════════════════════════╦═════════╩═════════════════╗")
-    tiskHori(final,red,internal)
+    tiskHori(final,red,timerState[3])
     print("╠═════════════════════════════╣ main energy supply system ║")
     print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
-    print("║ ████   ████   ████    ████  ║ 外部 external  ██████     ║")
+    print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
     print("╚═════════════════════════════╩═══════════════════════════╝")
     # If the timer is done, break out of the loop
     if remaining_time == 0:
@@ -180,28 +183,30 @@ while True:
     # Wait for a short period to avoid using too much CPU time
     time.sleep(0.01)
     clear_console()
-
+#---------------------------------------------------------
+timerState[0] = True
+#---------------------------------------------------------
 while True:
      time.sleep(0.3)
      if blik == True:
           final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
           blik = False
           ATR = '活動限界まで  active time remaining'
-          internal = True
+          timerState[3] = True
      elif blik == False:
           final = "{}{}{}{}{}{}{}".format('L',"Z","D","ZZ","D","ZZ","E")
           blik = True
           ATR = "                                   "
-          internal = False
+          timerState[3] = False
      
      clear_console()
      print("╔═══════════════════════════════════════╗")
      print("║ "+ ATR + "   ║")
      print("╠═════════════════════════════╦═════════╩═════════════════╗")
-     tiskHori(final,red,internal)
+     tiskHori(final,red,timerState[3])
      print("╠═════════════════════════════╣ main energy supply system ║")
      print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
-     print("║ ████   ████   ████    ████  ║外部 external  ██████      ║")
+     print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
      print("╚═════════════════════════════╩═══════════════════════════╝")
      time.sleep(0.01)
 
