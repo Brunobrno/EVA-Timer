@@ -1,5 +1,4 @@
-import time, os, threading
-from playsound import playsound
+import time, os
 from colorama import init, Fore, Back, Style
 # Initialize colorama
 init()
@@ -184,9 +183,9 @@ while True:
     print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
     print("╚═════════════════════════════╩═══════════════════════════╝")
     if milliseconds == 99:
-     playsound(r"C:/Users/bruno/Desktop/Docs/evangelion-timer-UI-python-/sounds/beep.mp3")
-    elif milliseconds == 1:
-     playsound(None)
+     
+    elif milliseconds == 0:
+     
     # If the timer is done, break out of the loop
     if remaining_time == 0:
         break
