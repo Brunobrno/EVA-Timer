@@ -182,10 +182,6 @@ while True:
     print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
     print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
     print("╚═════════════════════════════╩═══════════════════════════╝")
-    if milliseconds == 99:
-     
-    elif milliseconds == 0:
-     
     # If the timer is done, break out of the loop
     if remaining_time == 0:
         break
