@@ -20,7 +20,6 @@ def reset_txt():
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# █▒█▒█▒█
 #------------FUNKCE-----------------
 
 def tiskHori(number,red,internal):
@@ -39,7 +38,7 @@ def tiskHori(number,red,internal):
                     if internal == True and z == 0:
                          for x in E[z]:
                               for y in x:
-                                   if y == '█' or y == '▒':
+                                   if y == '█':
                                         print(red_txt() + y + reset_txt(),end="")
                                    else:
                                         print(y,end="")
@@ -55,6 +54,16 @@ def tiskHori(number,red,internal):
                     print((globals()['n' + str(segItem)][z]) + reset_txt(), end=" ")#n(cislo z segItemu)[z]  tisk,
 
         print("")
+
+def  casTisk(final,red,timerState,ATR):
+    print("╔═══════════════════════════════════════╗")
+    print("║ "+ ATR + "   ║")
+    print("╠═════════════════════════════╦═════════╩═════════════════╗")
+    tiskHori(final,red,timerState[4])
+    print("╠═════════════════════════════╣ main energy supply system ║")
+    print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
+    print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
+    print("╚═════════════════════════════╩═══════════════════════════╝")
 
 
 
@@ -123,6 +132,7 @@ Z = ['    ',
 blik = False
 red = False
 
+ATR = ['活動限界まで  active time remaining',"                                   "]
 # Define the duration of the timer in seconds
 duration = int(input("Enter time(between 1 - 300):")) #čas
 if duration > 300 or duration <= 0:
@@ -131,7 +141,7 @@ if duration > 300 or duration <= 0:
 
 
 #             stop slow  normal racing || internal external
-timerState = [False,False,False,False,False,True]
+timerState = [False,False,True,False,False,True]
 
 
 
@@ -140,10 +150,11 @@ timerState = [False,False,False,False,False,True]
 # Start the timer
 start_time = time.time()
 timerState[0:3] = [False] * 3
-timerState[3:6] = [True, False, False]
+timerState[3:6] = [True, True, False]
 
 # Loop until the timer is done
 while True:
+    #--------------------VÝPOČET ČASU----------------------
     # Calculate the time elapsed since the timer started
     remaining_time = duration - (time.time() - start_time)
 
@@ -155,7 +166,7 @@ while True:
     seconds = int(remaining_time % 60)
     milliseconds = int((remaining_time % 1) * 1000)
     milliseconds = int(milliseconds / 10)
-
+          #-----------------FORMÁT ČASU/ČÍSLIC---------------------
     if minutes==None or minutes <1:
      minutes = "0"
      red = True
@@ -164,60 +175,62 @@ while True:
      seconds = "00"
     elif seconds <10:
      seconds = "0" + str(seconds)
-    
+     if int(seconds) % 2 == 0 and minutes == 0:
+          timerState[1] = True
+          timerState[3] = False
+     else:
+         timerState[1] = False
+         timerState[3] = True
+
     if milliseconds == 0:
      milliseconds = "00"
     elif milliseconds <10:
      milliseconds = "0" + str(milliseconds)
-
+          #---------------------------------------------------------
     final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
     # Display the timer in the format "minutes : seconds : milliseconds"
-
-    #------------print section-------------------
-    print("╔═══════════════════════════════════════╗")
-    print("║ 活動限界まで  active time remaining   ║")
-    print("╠═════════════════════════════╦═════════╩═════════════════╗")
-    tiskHori(final,red,timerState[3])
-    print("╠═════════════════════════════╣ main energy supply system ║")
-    print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
-    print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
-    print("╚═════════════════════════════╩═══════════════════════════╝")
+    #------------------------------------------
+    
+    casTisk(final,red,timerState,ATR[0])
     # If the timer is done, break out of the loop
     if remaining_time == 0:
+        timerState[1] = False
         break
-
+    
     # Wait for a short period to avoid using too much CPU time
     time.sleep(0.01)
     clear_console()
 #---------------------------------------------------------
+
 timerState[0] = True
+
 #---------------------------------------------------------
 while True:
-     time.sleep(0.3)
+     time.sleep(0.15)
+     #--------------REPEATER--------------------
      if blik == True:
           final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
           blik = False
-          ATR = '活動限界まで  active time remaining'
           timerState[3] = True
+          timerState[4] = True
+          clear_console()
+          casTisk(final,red,timerState,ATR[0])
      elif blik == False:
           final = "{}{}{}{}{}{}{}".format('L',"Z","D","ZZ","D","ZZ","E")
           blik = True
-          ATR = "                                   "
           timerState[3] = False
-     
-     clear_console()
-     print("╔═══════════════════════════════════════╗")
-     print("║ "+ ATR + "   ║")
-     print("╠═════════════════════════════╦═════════╩═════════════════╗")
-     tiskHori(final,red,timerState[3])
-     print("╠═════════════════════════════╣ main energy supply system ║")
-     print("║ STOP   SLOW  NORMAL  RACING ╠═══════════════════════════╣")
-     print("║ " + (red_txt() if timerState[0]== True else reset_txt()) + "████   " + (red_txt() if timerState[1]== True else reset_txt()) + "████   " + (red_txt() if timerState[2]== True else reset_txt()) + "████    " + (red_txt() if timerState[3]== True else reset_txt()) + "████  " + reset_txt() + "║ 外部 external  "+ (red_txt() if timerState[5]== True else reset_txt()) + "██████" + reset_txt() + "     ║")
-     print("╚═════════════════════════════╩═══════════════════════════╝")
+          timerState[4] = False
+          clear_console()
+          casTisk(final,red,timerState,ATR[1])
+     #-----------------------------------------
+     #tisk
+
      time.sleep(0.01)
 
+     
 
-print(Style.RESET_ALL +"----------------------------------------")
+
+print(Style.RESET_ALL +"-------------------END---------------------")
 
 
 # dej barvy do metod aby jsi je mohl vložit mezi text v printu !!! !!! !!!
