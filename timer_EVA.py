@@ -154,7 +154,7 @@ timerState[3:6] = [True, True, False]
 
 # Loop until the timer is done
 while True:
-    #--------------------VÝPOČET ČASU----------------------
+    #--------------------VÝPOČET ČASU--------------------
     # Calculate the time elapsed since the timer started
     remaining_time = duration - (time.time() - start_time)
 
