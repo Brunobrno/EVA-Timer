@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import time, os
 from colorama import init, Fore, Back, Style
 # Initialize colorama
