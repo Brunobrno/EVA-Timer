@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
 import time, os
 from colorama import init, Fore, Back, Style
 # Initialize colorama
