@@ -1,0 +1,37 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+.header-nadpis{
+    width: 100%;
+    height: 10ch;
+    background-color: darkred;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nadpis{
+    
+}
+.buttons-grid{
+    padding-top: 2ch;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    width: 100%;
+}
+.buttons-grid-items{
+    padding: 5ch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1ch;
+    border-color: darkred;
+    border-style: solid;
+}
+.buttons-grid-items-link{
+    text-decoration: none;
+    color: aliceblue;
+}
