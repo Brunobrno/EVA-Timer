@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import time, os
 from colorama import init, Fore, Back, Style
 # Initialize colorama
@@ -28,7 +29,7 @@ def tiskHori(number,red,internal):
 
     #rozdeleni inputu na pole aby se vytisknulo jednotlive cislo
     for items in number:
-          forSegment.append(items) #1,2,3,4...vBbbBfbvcBVcbvbcv
+          forSegment.append(items) #1,2,3,4...
     #tisk horizontalne
     for z in range(3):
         for segItem in forSegment:
@@ -206,7 +207,7 @@ timerState[0] = True
 
 #---------------------------------------------------------
 while True:
-     time.sleep(0.15)
+     time.sleep(0.3)
      #--------------REPEATER--------------------
      if blik == True:
           final = "{}{}{}{}{}{}{}".format('L',minutes,"D",seconds,"D",milliseconds,"E")
