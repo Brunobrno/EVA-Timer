@@ -4,9 +4,10 @@ body {
     background-color: black;
 }
 .container{
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 176,95;
+    /*width: 100%;
+    height: 100%;*/
+    aspect-ratio: 176/95;
+    /*264 : 145*/
 
 }
 .timer-shape-cage{
@@ -15,9 +16,9 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    
+    aspect-ratio: 176/95;
     background: linear-gradient(to right, rgb(189, 77, 43), rgb(206, 206, 25),green);
-    clip-path: polygon(0 100%, 0 0, 100% 0%, 100% 80%, 21% 80%, 17% 100%);
+    clip-path: polygon(0 100%, 0 0, 100% 0%, 100% 80%, 23% 80%, 18% 100%);
 
 }
 .timer-eviroment{
@@ -26,7 +27,8 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    clip-path: polygon(3% 95%, 19% 15%, 19% 0, 40% 0, 42.5% 6%, 99% 6%, 99% 60%, 19% 60%, 12% 95%);
+    aspect-ratio: 176/95;
+    clip-path: polygon(3% 95%, 21% 15%, 21% 5%, 40% 5%, 42.5% 11%, 92% 11%, 92% 60%, 21% 60%, 12% 95%);
     background-color: black;
 
 }
