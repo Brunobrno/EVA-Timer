@@ -8,6 +8,7 @@ body {
     height: 100%;
     background-color: black;
     color: yellow;
+    overflow: hidden;
 }
 .container{
     aspect-ratio: 176/95;
@@ -36,31 +37,36 @@ body {
 
 .timer-head{
     margin-left: 21%;
-    margin-top: 0%;
-    font-size: 75%;
-    width: 50%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
+    /*width: 50%;*/
+    /*display: grid;
+    grid-template-columns: repeat(2, 1fr);*/
+    display: flex;
+    flex-direction: column;
+
 }
 .ATR-japanese{
-    font-size: 1.6vw;
+    font-size: 3.2vw;
     border: 1px;
+    margin-top: 2.2%;
     border-style: solid;
     border-color: aqua;
 }
 .ATR{
-    margin-left: -15%;
-    margin-top: 17%;
     font-size: 1.8vw;
-    border: 1px;
-    border-style: solid;
-    border-color: aqua;
+    border-bottom: 0.1pc;
+    border-right: 0.1pc;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-color: red;
+    left: 10%;
 }
 .addon-timer{
     border: 1px;
     border-style: solid;
     border-color: aqua;
-    margin-top: -10%;
+}
+
+/*timer java*/
+.timer-java{
+    
 }
