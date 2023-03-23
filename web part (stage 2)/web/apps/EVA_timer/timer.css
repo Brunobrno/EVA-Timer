@@ -43,16 +43,17 @@ body {
 
 }
 .ATR-japanese{
-    font-size: 3.4vw;
+    font-size: 5vw;
     border-bottom: 1px;
     margin-top: 4.5%;
     border-bottom-style: solid;
     border-bottom-color: aqua;
-    transform: scale(0.8,1);
-    margin-left: -11%;
+    transform: scale(0.55,1);
+    margin-left: -29%;
+    height: fit-content;
 }
 .ATR{
-    font-size: 1.8vw;
+    font-size: 2.5vw;
     border-bottom: 0.1pc;
     border-right: 0.1pc;
     border-bottom-style: solid;
@@ -60,10 +61,11 @@ body {
     border-color: red;
     padding-top: 15%;
     margin-left: -54%;
-    width: 57%;
+    width: 80%;
+    height: fit-content;
 }
 .addon-timer{
-    width: 10%;
+    width: 10.5%;
     border-bottom: 0.1pc;
     border-right: 0.1pc;
     border-left: 0.1pc;
@@ -71,6 +73,8 @@ body {
     border-right-style: solid;
     border-left-style: solid;
     border-color: red;
+    font-size: 2.5vw;
+    height: fit-content;
 }
 
 /*timer java*/
