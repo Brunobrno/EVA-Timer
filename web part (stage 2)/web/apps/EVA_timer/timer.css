@@ -27,21 +27,40 @@ body {
 
 }
 .timer-eviroment{
-    /*margin-top: 5%;*/
     aspect-ratio: 176/95;
     clip-path: polygon(3% 90%, 21% 15%, 21% 5%, 40% 5%, 41.5% 11%, 92% 11%, 92% 60%, 20% 60%, 13% 90%);
     background-color: black;
 }
+
+/*nadips timeru*/
+
 .timer-head{
     margin-left: 21%;
     margin-top: 0%;
     font-size: 75%;
-    display: flex;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
     align-items: center;
+}
+.ATR-japanese{
     font-size: 1.6vw;
+    border: 1px;
+    border-style: solid;
+    border-color: aqua;
 }
 .ATR{
-    margin-left: 3%;
-    margin-top: 5%;
+    margin-left: -15%;
+    margin-top: 17%;
     font-size: 1.8vw;
+    border: 1px;
+    border-style: solid;
+    border-color: aqua;
+}
+.addon-timer{
+    border: 1px;
+    border-style: solid;
+    border-color: aqua;
+    margin-top: -10%;
 }
