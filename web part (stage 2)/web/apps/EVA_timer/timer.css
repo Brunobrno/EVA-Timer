@@ -24,12 +24,12 @@ body {
     right: 0;
     aspect-ratio: 176/95;
     background-color: red;
-    clip-path: polygon(2.8% 90.2%, 20.9% 15%, 20.9% 4.8%, 40.1% 4.8%, 41.6% 10.8%, 92.15% 10.8%, 92.15% 60.2%, 20.1% 60.2%, 13.1% 90.2%);
+    clip-path: polygon(2.8% 90.2%, 20.9% 15%, 20.9% 4.8%, 37.1% 4.8%, 38.6% 10.8%, 92.15% 10.8%, 92.15% 60.2%, 20.1% 60.2%, 13.1% 90.2%);
 
 }
 .timer-eviroment{
     aspect-ratio: 176/95;
-    clip-path: polygon(3% 90%, 21% 15%, 21% 5%, 40% 5%, 41.5% 11%, 92% 11%, 92% 60%, 20% 60%, 13% 90%);
+    clip-path: polygon(3% 90%, 21% 15%, 21% 5%, 37% 5%, 38.5% 11%, 92% 11%, 92% 60%, 20% 60%, 13% 90%);
     background-color: black;
 }
 
@@ -38,18 +38,18 @@ body {
 .timer-head{
     margin-left: 21%;
     /*width: 50%;*/
-    /*display: grid;
-    grid-template-columns: repeat(2, 1fr);*/
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
 }
 .ATR-japanese{
-    font-size: 3.2vw;
-    border: 1px;
-    margin-top: 2.2%;
-    border-style: solid;
-    border-color: aqua;
+    font-size: 3.4vw;
+    border-bottom: 1px;
+    margin-top: 4.5%;
+    border-bottom-style: solid;
+    border-bottom-color: aqua;
+    transform: scale(0.8,1);
+    margin-left: -11%;
 }
 .ATR{
     font-size: 1.8vw;
@@ -58,12 +58,19 @@ body {
     border-bottom-style: solid;
     border-right-style: solid;
     border-color: red;
-    left: 10%;
+    padding-top: 15%;
+    margin-left: -54%;
+    width: 57%;
 }
 .addon-timer{
-    border: 1px;
-    border-style: solid;
-    border-color: aqua;
+    width: 10%;
+    border-bottom: 0.1pc;
+    border-right: 0.1pc;
+    border-left: 0.1pc;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-color: red;
 }
 
 /*timer java*/
