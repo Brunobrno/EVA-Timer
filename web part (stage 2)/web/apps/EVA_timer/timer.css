@@ -39,7 +39,7 @@ body {
     margin-left: 21%;
     /*width: 50%;*/
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 49%);
 
 }
 .ATR-japanese{
@@ -50,7 +50,7 @@ body {
     border-bottom-color: aqua;
     transform: scale(0.55,1);
     margin-left: -29%;
-    height: fit-content;
+    height: 71.4%;
 }
 .ATR{
     font-size: 2.5vw;
@@ -65,7 +65,7 @@ body {
     height: fit-content;
 }
 .addon-timer{
-    width: 10.5%;
+    width: 12.7%;
     border-bottom: 0.1pc;
     border-right: 0.1pc;
     border-left: 0.1pc;
@@ -75,6 +75,7 @@ body {
     border-color: red;
     font-size: 2.5vw;
     height: fit-content;
+    bottom: 10%;
 }
 
 /*timer java*/
