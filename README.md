@@ -1,19 +1,20 @@
 # EVA-Timer
-This is my personal project, I had the python and website in my PC that I randomly found when I started programing.
-- this project is in two parts:
--  python part (Timer just display in console, japanese characters only work in VS & VSC and I tried to change font in CMD so It can display jpanese characters but the spaces are offset, so It looks horible)
--  website part (Because I use old files from time I was starting programing, It´s just simple HTML,CSS and JS files, no framework. But I think I will keep It that way because It´s simple to copy It for everyone else)
+This is my personal project, I had this project on school github account and i transfered it to my personal account (that´s why there is second contributor Vontor)
 
-Sorry for mistakes in English (It´s not my native language).
+> [!IMPORTANT]
+> this project is in two versions: **Python** (just console application) and **Website**
 
-* Old README.md from young me*
-*  but with useful information about python part*
-<sub># evangelion-timer-UI-python-
+## Python part
+- Timer just display in console
+- japanese characters only work in VS & VSC and I tried to change font in CMD so It can display jpanese characters but the spaces are offset, so It looks horible)
+  ### Guide to start
+  - Please use file: EVA_Timer.py for actual timer.
+  - U can use Timer.py for just segment display for numbers, it counts five minutes from zero.
+## Website part
+- Because I use old files from time I was starting programing, It´s just simple HTML, CSS and JS files, no framework. But I think I will keep It that way because It´s simple to copy It for beginners)
+- If you start website in VSC with index.html you will be greeted with menu there will be one working option and that´s for EVA Timer **(!not finished!)**
+- Timer will not be responsive! It will have same size and shape (I think It would look ulgy)
 
-this is evangelion UI timer in console.
 
-please use file: timer_EVA.py for actual timer.
-u can use main.py for just segment display for numbers, it counts five minutes from zero.
 
-this is my first project on github !!!
-</sub>
+_Sorry for mistakes In English (It´s not my native language)._
