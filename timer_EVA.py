@@ -233,5 +233,5 @@ while True:
 
 print(Style.RESET_ALL +"-------------------END---------------------")
 
-
+input()
 # dej barvy do metod aby jsi je mohl vložit mezi text v printu !!! !!! !!!
