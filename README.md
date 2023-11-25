@@ -6,7 +6,7 @@ This is my personal project, I had the python and website in my PC that I random
 
 Sorry for mistakes in English (It´s not my native language).
 
-* Old README.md from young me
+* Old README.md from young me*
 *  but with useful information about python part*
 <sub># evangelion-timer-UI-python-
 
