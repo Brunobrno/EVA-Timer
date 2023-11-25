@@ -1,12 +1,3 @@
-# evangelion-timer-UI-python-
-
-this is evangelion UI timer in console.
-
-please use file: [timer_EVA.py] for actual timer.
-u can use [main.py] for just segment display for numbers, it counts five minutes from zero.
-
-this is my first project on github !!!
-
 # EVA-Timer
 This is my personal project, I had the python and website in my PC that I randomly found when I started programing.
 - this project is in two parts:
@@ -14,3 +5,15 @@ This is my personal project, I had the python and website in my PC that I random
 -  website part (Because I use old files from time I was starting programing, It´s just simple HTML,CSS and JS files, no framework. But I think I will keep It that way because It´s simple to copy It for everyone else)
 
 Sorry for mistakes in English (It´s not my native language).
+
+* Old README.md from young me
+*  but with useful information about python part*
+<sub># evangelion-timer-UI-python-
+
+this is evangelion UI timer in console.
+
+please use file: [timer_EVA.py] for actual timer.
+u can use [main.py] for just segment display for numbers, it counts five minutes from zero.
+
+this is my first project on github !!!
+</sub>
