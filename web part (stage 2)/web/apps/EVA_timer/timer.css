@@ -43,11 +43,11 @@ body {
 
 }
 .ATR-japanese{
-    font-size: 5vw;
+    font-size: 4.92vw;
     border-bottom: 1px;
     margin-top: 4.5%;
     border-bottom-style: solid;
-    border-bottom-color: aqua;
+    border-bottom-color: red;
     transform: scale(0.55,1);
     margin-left: -29%;
     height: 71.4%;
