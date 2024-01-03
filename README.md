@@ -2,7 +2,7 @@
 This is my personal project, I had this project on school github account and i transfered it to my personal account (that´s why there is second contributor Vontor)
 
 > [!IMPORTANT]
-> this project is in two versions: **Python** (just console application) and **Website**
+> this project is in two versions: **Python** (just console application) and **static Website**
 
 ## Python part
 - Timer just display in console
