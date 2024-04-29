@@ -6,7 +6,7 @@ This is my personal project, I had this project on school github account and i t
 
 ## Python part
 - Timer just display in console
-- japanese characters only work in VS & VSC and I tried to change font in CMD so It can display jpanese characters but the spaces are offset, so It looks horible)
+- japanese characters only work in VS & VSC and I tried to change font in CMD so It can display japanese characters but the spaces are offset, so It looks horible)
   ### Guide to start
   - Please use file: EVA_Timer.py for actual timer.
   - U can use Timer.py for just segment display for numbers, it counts five minutes from zero.
